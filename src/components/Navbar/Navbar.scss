@@ -1,0 +1,116 @@
+@import '../../responsiveness.scss';
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+
+    a{
+        transition: all 0.4s ease;
+        @include sm{
+            display: none;
+        }
+        &:hover{
+            color: brown;
+            scale: 1.05;
+        }
+      
+    }
+   
+    .left{
+        flex:3;
+        display: flex;
+        // background-color: chocolate;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        
+        .logo{
+            font-weight: bold;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            img{
+                width: 28px;
+                height: 28px;
+            }
+
+            span{
+                @include md{
+                    display: none;
+                }
+                @include sm{
+                    display: initial;
+                }
+            }
+        }
+    }
+    .right{
+        flex:2;
+        height: 100px;
+        display: flex;
+        justify-content: flex-end;
+        background-color: #fcf5f3;
+        align-items: center;
+        gap: 20px;
+       
+        a{
+            padding: 12px 24px;
+            margin: 20px;
+        }
+
+        .last-item{
+           background-color: bisque;
+           padding: 10px;
+
+        }
+        .menu{
+            display: none;
+            z-index: 1000;
+
+            img{
+                width: 36px;
+                height: 36px;
+                cursor: pointer;
+            }
+
+            @include sm{
+                display: initial;
+            }
+           
+        }
+
+        .row-menu{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            position: absolute;
+            top: 0;
+            right: -50%;
+            background-color: black;
+            color: white;
+            height: 80vh;
+            width: 40%;
+            transition: all 1s ease;
+
+            &.active{
+                right: 0;
+            }
+            @include sm{
+               a{
+                display: initial;
+               }
+            }
+        }
+
+        @include md{
+            background-color: transparent;
+        }
+    }
+}
