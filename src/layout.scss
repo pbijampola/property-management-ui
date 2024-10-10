@@ -14,13 +14,17 @@
     }
 
     @include md{
-        background-color: blue;
+        // background-color: blue;
         max-width: 768px;
     }
 
     @include sm{
-        background-color: red;
+        // background-color: red;
         max-width: 640px;
+    }
+    .content{
+        height: calc(100vh - 100px);
+        // background-color: purple;
     }
 
    
